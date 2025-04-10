@@ -1,4 +1,4 @@
-export const generateRandomTextResponse = () => {
+export const generateRandomText = () => {
   const responses = [
     "Okay, I understand.",
     "Thanks for letting me know.",
@@ -6,6 +6,29 @@ export const generateRandomTextResponse = () => {
     "Interesting point.",
     "Got it.",
     "Let me process that.",
+    "Understood.",
+    "Noted.",
+    "Alright.",
+    "Makes sense.",
+    "I see.",
+    "Acknowledged.",
+    "Clear.",
+    "Perfect.",
+    "Sounds good.",
+    "Let me check on that.",
+    "One moment.",
+    "Certainly.",
+    "Sure thing.",
+    "Good to know.",
+    "I'll keep that in mind.",
+    "Processing...",
+    "Duly noted.",
+    "Okay, then.",
+    "That's clear, thank you.",
+    "Appreciate the information.",
+    "Right.",
+    "Fine.",
+    "Will do.",
   ];
   return responses[Math.floor(Math.random() * responses.length)];
 };

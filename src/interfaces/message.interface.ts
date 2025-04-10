@@ -1,6 +1,9 @@
+import { WizyProductsInterface } from "./wizyProducts.interface";
+
 export interface MessageInterface {
   id: string;
-  message: string;
   sendAt: string;
-  sender: "user" | "ai";
+  products?: WizyProductsInterface[];
+  message?: string;
+  sender?: "user" | "ai";
 }
