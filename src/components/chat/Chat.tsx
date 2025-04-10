@@ -14,10 +14,11 @@ const Chat = () => {
   const [messages, setMessages] = useState<MessageInterface[]>([]);
   const [isLoadMessageAI, setIsLoadMessageAI] = useState(false);
 
+  //function to add messages
   const onAddMessage = (message: MessageInterface) => {
     setMessages((prev) => [...prev, message]);
     if (
-      message.message?.toLowerCase()?.includes("i want product recommendations")
+      message.message?.toLowerCase()?.includes("i want product recommendations") //if compliant, a product message is added
     ) {
       getProducts().then((products) => {
         const messageAI: MessageInterface = {
@@ -28,7 +29,9 @@ const Chat = () => {
         setMessages((prev) => [...prev, messageAI]);
       });
     } else {
+      //if you do not add a normal message AI
       if (!isLoadMessageAI) {
+        //to avoid multiple replies if the user sends more than one message
         setIsLoadMessageAI(true);
 
         setTimeout(() => {
@@ -40,7 +43,7 @@ const Chat = () => {
           };
           setMessages((prev) => [...prev, messageAI]);
           setIsLoadMessageAI(false);
-        }, 3000);
+        }, 3000); //3 seconds for send message AI
       }
     }
   };

@@ -12,6 +12,7 @@ type Props = {
 export const BodyChat = ({ messages, isLoadMessageAI }: Props) => {
   const chatContainerRef = useRef<HTMLElement>(null);
 
+  //keep scrolling in the last message
   useEffect(() => {
     const container = chatContainerRef.current;
     if (container) {

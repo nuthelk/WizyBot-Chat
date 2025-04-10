@@ -64,18 +64,18 @@ export const useChatInput = ({ onAddMessage }: Props): UseChatInputReturn => {
     },
     [text, cursorPosition]
   );
-
+  //capture the message
   const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
     setCursorPosition(e.target.selectionStart || 0);
   };
-
+  //captures the cursor position in the message
   const handleSelect = () => {
     if (inputRef.current) {
       setCursorPosition(inputRef.current.selectionStart || 0);
     }
   };
-
+  //creates the user's message
   const sendMessage = useCallback(
     (text: string) => {
       if (text.trim()) {
@@ -91,7 +91,7 @@ export const useChatInput = ({ onAddMessage }: Props): UseChatInputReturn => {
     },
     [onAddMessage]
   );
-
+  //send message with enter key
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>, text: string) => {
       if (e.key === "Enter" && !e.shiftKey) {
