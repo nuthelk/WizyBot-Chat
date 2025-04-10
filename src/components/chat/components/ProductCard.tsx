@@ -6,6 +6,7 @@ interface Props {
 }
 
 function ProductCard({ product }: Props) {
+  //add random price
   const randomPrice = useMemo(() => {
     return (Math.random() * 100).toFixed(2);
   }, []);
