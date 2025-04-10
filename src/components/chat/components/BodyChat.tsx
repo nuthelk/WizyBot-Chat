@@ -38,7 +38,10 @@ export const BodyChat = ({ messages, isLoadMessageAI }: Props) => {
                 key={message.id}
               />
             ) : (
-              message.products && <ProductCarousel message={message} />
+              message.products &&
+              message.products.length > 0 && (
+                <ProductCarousel message={message} />
+              )
             )}
           </>
         ))}
